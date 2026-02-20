@@ -1,0 +1,22 @@
+# FastAPI and server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# MongoDB async (Motor + Beanie ODM)
+motor>=3.3.0
+beanie>=1.24.0
+pymongo>=4.6.0
+
+# Validation and settings
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Auth (Supabase JWT validation; RS256/ES256 via JWKS)
+PyJWT[crypto]>=2.8.0
+cryptography>=42.0.0
+
+# PDF processing
+PyPDF2>=3.0.0
+
+# File upload (included in FastAPI; explicit if needed)
+python-multipart>=0.0.6
