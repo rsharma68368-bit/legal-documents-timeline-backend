@@ -48,6 +48,10 @@ class Settings(BaseSettings):
     upload_dir: str = "uploads"
     max_upload_size_mb: int = 50
 
+    # LLM - Groq (free tier; get key at https://console.groq.com)
+    groq_api_key: Optional[str] = None
+    llm_model: str = "llama-3.1-8b-instant"  # Fast free model on Groq
+
 
 @lru_cache
 def get_settings() -> Settings:

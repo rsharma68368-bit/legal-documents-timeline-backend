@@ -120,7 +120,6 @@ async def get_current_user(
             detail=f"Unsupported token algorithm: {alg}",
         )
 
-    # Standard JWT claims: sub = subject (user id in Supabase)
     supabase_id: str = payload.get("sub")
     if not supabase_id:
         raise HTTPException(
@@ -129,7 +128,6 @@ async def get_current_user(
         )
     email: str | None = payload.get("email")
 
-    # Create or sync user in our DB (async to avoid blocking the event loop)
     user = await User.find_one(User.supabase_id == supabase_id)
     if not user:
         user = User(supabase_id=supabase_id, email=email)

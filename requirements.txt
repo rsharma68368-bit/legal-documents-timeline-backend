@@ -18,5 +18,8 @@ cryptography>=42.0.0
 # PDF processing
 PyPDF2>=3.0.0
 
+# LLM - Groq (free tier, Llama 3)
+groq>=0.4.0
+
 # File upload (included in FastAPI; explicit if needed)
 python-multipart>=0.0.6

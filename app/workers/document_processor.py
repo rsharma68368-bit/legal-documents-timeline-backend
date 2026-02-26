@@ -42,7 +42,6 @@ async def process_document(document_id: PydanticObjectId) -> None:
         logger.info("Document %s already in status %s; skipping.", document_id, doc.status)
         return
 
-    # Mark as processing so GET /documents/{id} shows progress
     doc.status = DocumentStatus.PROCESSING
     await doc.save_changes()
     logger.info("Started processing document %s", document_id)
